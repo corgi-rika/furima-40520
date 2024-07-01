@@ -23,7 +23,6 @@ Things you may want to cover:
 
 * ...
 
-<!-- id,created_at,updated_atは自動生成されるカラムなので、DB設計においては削除しましょう。 -->
 ## users テーブル
 
 | Column             | Type     | Options                  |
@@ -31,11 +30,11 @@ Things you may want to cover:
 | email              | string   | null: false, unique: true|
 | nickname           | string   | null: false              |
 | encrypted_password | string   | null: false              |
-| full_name          | string   | null: false              |
-| full_name_kana     | string   | null: false              |
-| birth_year_id      | integer  | null: false              |
-| birth_month_id     | integer  | null: false              |
-| birth_day_id       | integer  | null: false              |
+| first_name         | string   | null: false              |
+| last_name          | string   | null: false              |
+| first_name_kana    | string   | null: false              |
+| last_name_kana     | string   | null: false              |
+| birth_date         | date     | null: false              |
 
 - has_many :items
 - has_many :purchases
@@ -50,7 +49,7 @@ Things you may want to cover:
 | condition_id    | integer    | null: false                   |
 | shipping_fee_id | integer    | null: false                   |
 | prefecture_id   | integer    | null: false                   |
-| shipping_days_id| integer    | null: false                   |
+| shipping_day_id | integer    | null: false                   |
 | price           | integer    | null: false                   |
 | user            | references | null: false, foreign_key: true|
 
