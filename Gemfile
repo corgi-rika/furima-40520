@@ -52,7 +52,8 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails', '~> 4.0.0'
-    gem 'factory_bot_rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -81,6 +82,14 @@ group :production do
   gem 'pg'
 end
 
+gem 'pry'
+gem 'pry-rails'
+gem 'awesome_print'
+
 gem 'devise'
 
 gem 'active_hash'
+
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
