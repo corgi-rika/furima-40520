@@ -10,7 +10,7 @@ const price =() => {
     addTax.innerHTML =tax;
 
     const addProfit = document.getElementById("profit");
-    const profitValue = inputValue - tax;  // 販売利益を計算
+    const profitValue =  Math.floor(inputValue - tax);  // 販売利益を計算
     addProfit.innerHTML = profitValue;
   });
 };
