@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @sold_out = @item.purchase.present?
   end
 
   def edit
