@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    name { 'test' }
+    name { 'Test Item' }
     description { 'test' }
     category_id { 2 }
     shipping_fee_id { 2 }
@@ -8,7 +8,6 @@ FactoryBot.define do
     shipping_day_id { 2 }
     prefecture_id { 2 }
     price { 300 }
-
     association :user
 
     after(:build) do |item|
