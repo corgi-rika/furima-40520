@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_fee
   belongs_to :prefecture
   belongs_to :shipping_day
+  has_one    :purchase
 
   validates :name, presence: true
   validates :description, presence: true
@@ -28,4 +29,9 @@ class Item < ApplicationRecord
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :shipping_day_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :image, presence: true
+
+  # 売却済みかどうかを判定するメソッド
+  def sold_out?
+    purchase.present?
+  end
 end
