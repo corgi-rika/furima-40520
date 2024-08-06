@@ -20,7 +20,7 @@ RSpec.describe PurchaseShippingInfo, type: :model do
   end
 
   context '内容に問題がある場合' do
-    it 'tokenがからでは登録できないこと' do
+    it 'tokenが空では登録できないこと' do
       @purchase_shipping_info.token = nil
       @purchase_shipping_info.valid?
       expect(@purchase_shipping_info.errors.full_messages).to include("Token can't be blank")
