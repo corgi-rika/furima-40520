@@ -22,6 +22,8 @@ class ItemsController < ApplicationController
 
   def show
     @sold_out = @item.purchase.present?
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def edit
