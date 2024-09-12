@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   belongs_to :category
   belongs_to :condition
   belongs_to :shipping_fee
@@ -29,7 +29,7 @@ class Item < ApplicationRecord
   validates :shipping_fee_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :shipping_day_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :image, presence: true
+  validates :images, presence: true, length: { minimum: 1, maximum: 5, message: 'は1枚以上5枚以下にしてください' }
 
   # 売却済みかどうかを判定するメソッド
   def sold_out?
